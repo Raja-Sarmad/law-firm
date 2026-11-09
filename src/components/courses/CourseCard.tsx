@@ -17,7 +17,7 @@ export function CourseCard({ course, layout = "grid" }: { course: Course; layout
         data-zoom
       />
       {course.badge ? (
-        <span className="absolute left-3 top-3 rounded-full bg-[#080a0f]/90 px-2.5 py-1 text-[11px] font-semibold text-ivory">
+        <span className="absolute left-3 top-3 rounded-full bg-[#0f1218]/90 px-2.5 py-1 text-[11px] font-semibold text-ivory">
           {course.badge}
         </span>
       ) : null}

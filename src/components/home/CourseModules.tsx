@@ -20,7 +20,7 @@ const perks = [
 
 function ScalesBadge() {
   return (
-    <svg viewBox="0 0 32 32" className="h-7 w-7 text-[#080a0f]" fill="none" aria-hidden="true">
+    <svg viewBox="0 0 32 32" className="h-7 w-7 text-[#0f1218]" fill="none" aria-hidden="true">
       <path d="M16 5v20M10 9h12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
       <path d="M7 21h6M19 21h6M8 21l2-7h2l2 7M20 21l2-7h2l2 7" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
       <path d="M11 27h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -71,8 +71,6 @@ export function CourseModules({ courses }: { courses: Course[] }) {
   const four = courses.slice(0, 4);
   return (
     <section className="relative overflow-hidden pb-20 pt-12 lg:pb-24 lg:pt-16">
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[45%] bg-[radial-gradient(ellipse_at_50%_100%,rgba(212,175,92,0.16),transparent_70%)]" />
-
       <div className="shell relative">
         <div className="mx-auto max-w-3xl text-center">
           <div className="flex items-center justify-center gap-4 text-[11px] font-semibold uppercase tracking-[0.24em] text-gold">
@@ -106,15 +104,15 @@ export function CourseModules({ courses }: { courses: Course[] }) {
           <Link
             href="/courses"
             data-magnetic
-            className="lightning-pill inline-flex h-14 min-w-[200px] items-center justify-center rounded-full px-10 font-serif text-[22px] text-[#080a0f] sm:h-16 sm:min-w-[220px] sm:px-12 sm:text-[26px]"
+            className="lightning-pill inline-flex h-14 min-w-[200px] items-center justify-center rounded-full px-10 font-serif text-[22px] text-[#0f1218] sm:h-16 sm:min-w-[220px] sm:px-12 sm:text-[26px]"
           >
             <span className="magnetic-inner">Bonus Offer</span>
           </Link>
 
-          <ul className="mx-auto mt-9 grid max-w-[820px] gap-x-10 gap-y-3 text-left sm:grid-cols-2">
+          <ul className="mx-auto mt-9 grid max-w-[860px] gap-x-10 gap-y-3 text-left sm:translate-x-14 sm:grid-cols-2">
             {perks.map((perk, i) => (
-              <li key={perk} className="flex items-start gap-3 text-[15px] leading-6 text-ivory/90" data-rise>
-                <span className="glow-dot glow-dot--hot mt-[9px] h-2 w-2 shrink-0 rounded-full" style={{ animationDelay: `${i * 0.25}s` }} />
+              <li key={perk} className="flex items-center gap-3 text-[15px] leading-6 text-ivory/90" data-rise>
+                <span className="glow-dot glow-dot--hot h-2 w-2 shrink-0 rounded-full" style={{ animationDelay: `${i * 0.25}s` }} />
                 {perk}
               </li>
             ))}

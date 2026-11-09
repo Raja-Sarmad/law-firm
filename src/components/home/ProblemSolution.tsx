@@ -1,8 +1,6 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import { BookIcon, CapIcon, CaseIcon, UsersIcon } from "@/components/icons";
-import { SectionLabel } from "@/components/site/Crumb";
-
 const problems = [
   {
     title: "Theory without the file",
@@ -44,20 +42,23 @@ const problems = [
 export function ProblemSection() {
   return (
     <section className="shell relative overflow-x-clip py-16 sm:py-24">
-      <div className="pointer-events-none absolute left-[8%] top-[18%] h-40 w-40 rounded-full bg-[#b0703a]/18 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-[10%] right-[12%] h-48 w-48 rounded-full bg-gold/15 blur-3xl" />
+      <div className="mx-auto max-w-3xl text-center">
+        <div className="flex items-center justify-center gap-4 text-[11px] font-semibold uppercase tracking-[0.24em] text-gold">
+          <span className="h-px w-14 bg-gold" />
+          The Problem
+          <span className="h-px w-14 bg-gold" />
+        </div>
+        <h2 className="mt-5 font-serif text-[34px] font-medium leading-[1.1] tracking-[-0.03em] text-ivory sm:text-[46px]" data-split>
+          Legal education that never leaves the textbook
+        </h2>
+        <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-7 text-ink">
+          The gap between a lecture hall and a partner&apos;s desk is where careers stall. We built BYLAW to close it.
+        </p>
+      </div>
 
-      <div className="relative grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8">
+      <div className="relative mt-12 grid items-center gap-12 lg:grid-cols-2 lg:gap-10">
         <div>
-          <SectionLabel>The Problem</SectionLabel>
-          <h2 className="mt-4 max-w-xl font-serif text-[34px] font-medium leading-[1.1] tracking-[-0.03em] text-ivory sm:text-[46px]" data-split>
-            Legal education that never leaves the textbook
-          </h2>
-          <p className="mt-4 max-w-xl text-[15px] leading-7 text-ink">
-            The gap between a lecture hall and a partner&apos;s desk is where careers stall. We built BYLAW to close it.
-          </p>
-
-          <div className="scene mt-10 grid gap-4 sm:grid-cols-2">
+          <div className="scene grid gap-4 sm:grid-cols-2">
             {problems.map((item) => (
               <article
                 key={item.title}
@@ -87,14 +88,14 @@ export function ProblemSection() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[260px] sm:max-w-[400px]" data-rise>
+        <div className="relative mx-auto w-full max-w-[340px] sm:max-w-[460px] lg:ml-auto lg:mr-0" data-rise>
           <div className="relative aspect-square">
             <Image
               src="/images/asset-gavel-shatter.png"
               alt="Gold gavel striking and shattering the sound block"
               fill
-              sizes="(min-width: 1024px) 32vw, 80vw"
-              className="object-contain scale-90"
+              sizes="(min-width: 1024px) 460px, 80vw"
+              className="object-contain object-center scale-[0.92]"
             />
           </div>
         </div>
@@ -141,7 +142,7 @@ function SolutionCard({ title, text, mark }: { title: string; text: string; mark
     >
       <div className="pointer-events-none absolute inset-x-8 bottom-0 h-px bg-gradient-to-r from-transparent via-gold/55 to-transparent" />
       <div className="flex flex-col items-center text-center">
-        <span className="grid h-12 w-12 place-items-center rounded-xl border border-gold/35 bg-[#10131a] shadow-[0_0_18px_rgba(212,175,92,0.22)]">
+        <span className="grid h-12 w-12 place-items-center rounded-xl border border-gold/35 bg-[#181c25] shadow-[0_0_18px_rgba(212,175,92,0.22)]">
           {mark}
         </span>
         <span className="mt-4 block font-serif text-[20px] leading-snug text-ivory">{title}</span>
@@ -154,8 +155,6 @@ function SolutionCard({ title, text, mark }: { title: string; text: string; mark
 export function SolutionSection() {
   return (
     <section className="relative overflow-hidden pt-14 pb-0 lg:pt-16">
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[50%] bg-[radial-gradient(ellipse_at_50%_95%,rgba(212,175,92,0.14),transparent_70%)]" />
-
       <div className="shell relative z-[1]">
         <div className="mx-auto max-w-3xl text-center">
           <div className="flex items-center justify-center gap-4 text-[11px] font-semibold uppercase tracking-[0.24em] text-gold">

@@ -143,8 +143,8 @@ function Preloader() {
 
   return (
     <div ref={root} className="preloader fixed inset-0 z-[80]">
-      <div className="pre-left absolute inset-y-0 left-0 w-1/2 bg-[#080a0f]" />
-      <div className="pre-right absolute inset-y-0 right-0 w-1/2 bg-[#080a0f]" />
+      <div className="pre-left absolute inset-y-0 left-0 w-1/2 bg-[#0f1218]" />
+      <div className="pre-right absolute inset-y-0 right-0 w-1/2 bg-[#0f1218]" />
       <div className="pre-mark absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
         <Logo />
         <span className="pre-line mt-6 block h-px w-28 origin-left bg-gold" />
@@ -224,8 +224,8 @@ export function MotionRoot({ children }: { children: ReactNode }) {
     };
 
     const onMove = (event: PointerEvent) => {
-      glowX?.(event.clientX - 220);
-      glowY?.(event.clientY - 220);
+      glowX?.(event.clientX - 22);
+      glowY?.(event.clientY - 22);
       const target = event.target as HTMLElement | null;
       const nextMagnetic = target?.closest?.<HTMLElement>("[data-magnetic]") ?? null;
       if (magnetic && magnetic !== nextMagnetic) resetMagnetic(magnetic);
@@ -507,7 +507,7 @@ export function MotionRoot({ children }: { children: ReactNode }) {
   return (
     <>
       <div id="scroll-progress" className="pointer-events-none fixed left-0 top-0 z-[55] h-[2px] w-full origin-left scale-x-0 bg-gold" />
-      <div id="page-wipe" className="pointer-events-none fixed inset-0 z-[60] origin-left scale-x-0 bg-[#080a0f]" />
+      <div id="page-wipe" className="pointer-events-none fixed inset-0 z-[60] origin-left scale-x-0 bg-[#0f1218]" />
       <a
         href="#content"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[90] focus:rounded-full focus:bg-paper focus:px-4 focus:py-2"

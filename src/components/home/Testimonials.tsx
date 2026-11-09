@@ -45,11 +45,6 @@ export function Testimonials() {
 
   return (
     <section className="relative overflow-hidden py-20 lg:py-24">
-      {/* ambient glow */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-[55%] h-[520px] w-[1100px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(212,175,92,0.22),rgba(176,112,58,0.16)_45%,transparent_72%)] blur-2xl" />
-      </div>
-
       <div className="shell relative">
         <div className="mx-auto max-w-3xl text-center">
           <div className="flex items-center justify-center gap-4 text-[11px] font-semibold uppercase tracking-[0.24em] text-gold">
@@ -110,7 +105,7 @@ export function Testimonials() {
                         className="object-cover object-top"
                         priority={index === 0}
                       />
-                      <div className="absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-[#080a0f]/90 via-[#080a0f]/40 to-transparent" />
+                      <div className="absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-[#0f1218]/90 via-[#0f1218]/40 to-transparent" />
                       <div className="absolute inset-x-0 bottom-0 px-6 pb-5">
                         <p className="font-serif text-[24px] leading-none tracking-[0.03em] text-ivory sm:text-[26px]">{item.name}</p>
                         <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-gold">{item.role}</p>
@@ -124,7 +119,7 @@ export function Testimonials() {
                     className="relative block h-full w-full overflow-hidden rounded-[999px] border border-gold/30 shadow-[0_20px_50px_rgba(0,0,0,0.45)]"
                   >
                     <Image src={item.image} alt="" fill sizes="140px" className="object-cover" />
-                    <div className="absolute inset-0 bg-[#080a0f]/35" />
+                    <div className="absolute inset-0 bg-[#0f1218]/35" />
                   </button>
                 )}
               </article>
@@ -138,7 +133,7 @@ export function Testimonials() {
             type="button"
             aria-label="Previous story"
             onClick={() => go(-1)}
-            className="t-arrow grid h-12 w-12 place-items-center rounded-full border border-gold/40 bg-white/5 text-ivory transition hover:border-gold hover:bg-gold hover:text-[#080a0f]"
+            className="t-arrow grid h-12 w-12 place-items-center rounded-full border border-gold/40 bg-white/5 text-ivory transition hover:border-gold hover:bg-gold hover:text-[#0f1218]"
           >
             <ChevronIcon direction="left" />
           </button>
@@ -159,7 +154,7 @@ export function Testimonials() {
             type="button"
             aria-label="Next story"
             onClick={() => go(1)}
-            className="t-arrow grid h-12 w-12 place-items-center rounded-full border border-gold/40 bg-white/5 text-ivory transition hover:border-gold hover:bg-gold hover:text-[#080a0f]"
+            className="t-arrow grid h-12 w-12 place-items-center rounded-full border border-gold/40 bg-white/5 text-ivory transition hover:border-gold hover:bg-gold hover:text-[#0f1218]"
           >
             <ChevronIcon direction="right" />
           </button>

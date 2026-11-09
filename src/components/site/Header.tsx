@@ -110,8 +110,8 @@ export function Header() {
     <header
       className={`sticky top-0 z-50 border-b transition-[background,box-shadow,border-color] duration-300 ${
         scrolled
-          ? "border-gold/20 bg-[#080a0f]/86 shadow-[0_16px_40px_rgba(0,0,0,0.35)] backdrop-blur-xl"
-          : "border-transparent bg-[#0e1117]/35 backdrop-blur-md"
+          ? "border-gold/20 bg-[#0f1218]/86 shadow-[0_16px_40px_rgba(0,0,0,0.35)] backdrop-blur-xl"
+          : "border-transparent bg-[#161a23]/35 backdrop-blur-md"
       }`}
     >
       <div className="shell-wide flex h-[68px] items-center justify-between gap-3 sm:h-[78px] sm:gap-4">
@@ -143,7 +143,7 @@ export function Header() {
                 </button>
                 {coursesOpen ? (
                   <div className="absolute left-1/2 top-full w-64 -translate-x-1/2 pt-4">
-                    <div ref={panelRef} className="glass overflow-hidden rounded-2xl p-2">
+                    <div ref={panelRef} className="overflow-hidden rounded-2xl border border-gold/25 bg-[#161a23] p-2 shadow-[0_18px_40px_rgba(0,0,0,0.45)]">
                       <Link href="/courses" className="block rounded-xl px-3 py-2.5 text-sm font-semibold text-ivory hover:bg-white/5">
                         All courses
                       </Link>
@@ -190,7 +190,7 @@ export function Header() {
             {learner ?? "Login"}
           </Link>
           <span className="hidden sm:block">
-            <GoldLink href="/courses" className="h-10 whitespace-nowrap px-4">
+            <GoldLink href="/courses" className="h-10 whitespace-nowrap px-4 shadow-none">
               Enroll Now
             </GoldLink>
           </span>
@@ -206,7 +206,7 @@ export function Header() {
       </div>
 
       {searchOpen ? (
-        <div ref={searchRef} className="fixed inset-0 z-40 bg-[#080a0f] px-6 pt-28">
+        <div ref={searchRef} className="fixed inset-0 z-40 bg-[#0f1218] px-6 pt-28">
           <div className="shell">
             <div className="flex items-end justify-between gap-4">
               <p className="search-line overflow-hidden font-serif text-4xl text-ivory">Search the academy</p>
@@ -245,7 +245,7 @@ export function Header() {
       ) : null}
 
       {mobileOpen ? (
-        <div ref={mobileRef} className="fixed inset-x-0 bottom-0 top-[68px] z-40 overflow-auto bg-[#080a0f] px-6 py-8 sm:top-[78px] lg:hidden">
+        <div ref={mobileRef} className="fixed inset-x-0 bottom-0 top-[68px] z-40 overflow-auto bg-[#0f1218] px-6 py-8 sm:top-[78px] lg:hidden">
           <nav className="flex flex-col gap-2" aria-label="Mobile">
             {links.map((link) => (
               <Link
