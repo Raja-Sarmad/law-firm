@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { ChevronIcon, StarIcon } from "@/components/icons";
+import { ArrowIcon, ChevronIcon } from "@/components/icons";
 import { testimonials } from "@/lib/data";
 
 const AUTOPLAY_MS = 6500;
@@ -44,20 +45,18 @@ export function Testimonials() {
   }, [go]);
 
   return (
-    <section className="relative overflow-hidden py-20 lg:py-24">
+    <section id="results" className="relative overflow-hidden py-20 lg:py-24">
       <div className="shell relative">
         <div className="mx-auto max-w-3xl text-center">
           <div className="flex items-center justify-center gap-4 text-[11px] font-semibold uppercase tracking-[0.24em] text-gold">
             <span className="h-px w-14 bg-gold" />
-            Learner Stories
+            Results
             <span className="h-px w-14 bg-gold" />
           </div>
           <h2 className="mt-5 font-serif text-[34px] font-medium leading-[1.12] tracking-[-0.03em] text-ivory sm:text-[46px] lg:text-[52px]">
-            <span data-split>Real learners.</span>{" "}
-            <em className="gold-text font-medium not-italic" data-split>
-              Real results.
-            </em>
+            <span data-split>What solo lawyers say</span>
           </h2>
+          <p className="mt-4 text-[15px] leading-7 text-ink">Real lawyers. Real firms. Real changes.</p>
         </div>
 
         {/* Coverflow stage */}
@@ -71,7 +70,7 @@ export function Testimonials() {
             const isActive = offset === 0;
             return (
               <article
-                key={item.name}
+                key={item.id}
                 data-off={offset}
                 aria-hidden={!isActive}
                 className={`t-item absolute left-1/2 top-1/2 ${isActive ? "t-item--active" : "t-item--side"}`}
@@ -81,30 +80,15 @@ export function Testimonials() {
                   <div className="t-card bolt-border grid h-full w-full grid-rows-[auto_1fr] overflow-hidden rounded-[28px] sm:grid-cols-[1.1fr_0.9fr] sm:grid-rows-1">
                     <div className="flex min-h-0 flex-col overflow-hidden p-7 sm:p-8 sm:pr-7">
                       <p className="font-serif text-[24px] leading-[1.15] text-gold sm:text-[27px]">{item.stat}</p>
-                      <div className="mt-3 flex gap-1 text-gold">
-                        {Array.from({ length: 5 }).map((_, star) => (
-                          <StarIcon key={star} className="h-3.5 w-3.5" />
-                        ))}
-                      </div>
-                      <blockquote className="mt-4 font-serif text-[16.5px] leading-[1.6] text-ivory sm:text-[17px]">
-                        “{item.quote}”
-                      </blockquote>
-                      <div className="mt-auto flex flex-wrap items-center gap-2 pt-5">
-                        <span className="text-[10.5px] font-semibold uppercase tracking-[0.14em] text-muted">Course</span>
-                        <span className="rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-[10.5px] font-semibold uppercase tracking-[0.14em] text-gold">
-                          {item.course}
-                        </span>
-                      </div>
+                      <blockquote className="mt-4 font-serif text-[16.5px] leading-[1.6] text-ivory sm:text-[17px]">“{item.quote}”</blockquote>
+                      <p className="mt-auto pt-5 text-[14px] text-ink">
+                        {item.name} · {item.role}
+                        <span className="mx-2 text-gold">|</span>
+                        <span className="font-semibold text-ivory">{item.stat}</span>
+                      </p>
                     </div>
                     <div className="relative min-h-[260px] sm:min-h-0">
-                      <Image
-                        src={item.image}
-                        alt={item.name}
-                        fill
-                        sizes="(min-width: 640px) 360px, 100vw"
-                        className="object-cover object-top"
-                        priority={index === 0}
-                      />
+                      <Image src={item.image} alt="" fill sizes="(min-width: 640px) 360px, 100vw" className="object-cover object-top" priority={index === 0} />
                       <div className="absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-[#0f1218]/90 via-[#0f1218]/40 to-transparent" />
                       <div className="absolute inset-x-0 bottom-0 px-6 pb-5">
                         <p className="font-serif text-[24px] leading-none tracking-[0.03em] text-ivory sm:text-[26px]">{item.name}</p>
@@ -115,7 +99,7 @@ export function Testimonials() {
                 ) : (
                   <button
                     type="button"
-                    aria-label={`Show ${item.name}'s story`}
+                    aria-label={`Show result ${index + 1}`}
                     className="relative block h-full w-full overflow-hidden rounded-[999px] border border-gold/30 shadow-[0_20px_50px_rgba(0,0,0,0.45)]"
                   >
                     <Image src={item.image} alt="" fill sizes="140px" className="object-cover" />
@@ -140,7 +124,7 @@ export function Testimonials() {
           <div className="flex items-center gap-2">
             {testimonials.map((item, index) => (
               <button
-                key={item.name}
+                key={item.id}
                 type="button"
                 aria-label={`Go to story ${index + 1}`}
                 onClick={() => setActive(index)}
@@ -158,6 +142,12 @@ export function Testimonials() {
           >
             <ChevronIcon direction="right" />
           </button>
+        </div>
+        <div className="mt-8 text-center">
+          <Link href="#results" className="inline-flex items-center gap-2 text-sm font-semibold text-ivory transition-colors hover:text-gold">
+            Read more results
+            <ArrowIcon className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>

@@ -24,11 +24,10 @@ const introScript = `try{var reduce=matchMedia("(prefers-reduced-motion: reduce)
 
 export const metadata: Metadata = {
   title: {
-    default: "BYLAW Academy",
-    template: "%s · BYLAW Academy",
+    default: "The Solo Firm Blueprint",
+    template: "%s · The Solo Firm Blueprint",
   },
-  description:
-    "Professional online legal courses, practical training, and certifications from practicing lawyers.",
+  description: "Practical systems for intake, workflow, staffing, and finances, for solo and small-firm lawyers.",
 };
 
 export const viewport: Viewport = {

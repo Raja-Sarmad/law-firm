@@ -4,7 +4,7 @@ import { PageHeading } from "@/components/site/Crumb";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Write to BYLAW Academy admissions.",
+  description: "Write to The Solo Firm Blueprint.",
 };
 
 export default function Page() {
@@ -13,15 +13,13 @@ export default function Page() {
       <PageHeading
         crumb={[{ href: "/", label: "Home" }, { label: "Contact" }]}
         title="Contact"
-        lede="Admissions reads every note. Tell us what you want to learn, or what your team needs taught."
+        lede="Questions about the Blueprint, the free challenge, or the Firm Audit."
       />
       <section className="shell grid gap-8 pb-20 pt-8 lg:grid-cols-[0.8fr_1.2fr]">
         <aside className="lift h-fit rounded-[24px] bg-paper p-6">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gold">Admissions</p>
-          <a href="mailto:admissions@bylaw.academy" className="mt-3 block font-serif text-2xl text-navy">
-            admissions@bylaw.academy
-          </a>
-          <p className="mt-4 text-sm leading-6 text-muted">Weekdays, 9:00–17:00. The academy is taught online, so the desk is not tied to one building.</p>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gold">Desk</p>
+          <p className="mt-3 font-serif text-2xl text-ivory">[email address]</p>
+          <p className="mt-4 text-sm leading-6 text-muted">The address goes here once you have it.</p>
         </aside>
         <InquiryForm
           submitLabel="Send message"

@@ -2,8 +2,10 @@
 
 import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import Lenis from "lenis";
 import { Logo } from "@/components/site/Logo";
 import { ensureGsap, gsap, ScrollTrigger } from "@/lib/gsap";
+import "lenis/dist/lenis.css";
 
 const INTRO_KEY = "bylaw-introduced";
 
@@ -158,10 +160,47 @@ export function MotionRoot({ children }: { children: ReactNode }) {
   const router = useRouter();
   const routerRef = useRef(router);
   const armed = useRef(false);
+  const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
     routerRef.current = router;
   }, [router]);
+
+  useEffect(() => {
+    ensureGsap();
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) return;
+
+    const lenis = new Lenis({
+      lerp: 0.32,
+      smoothWheel: true,
+      wheelMultiplier: 1.15,
+      touchMultiplier: 1.1,
+      syncTouch: false,
+    });
+    lenisRef.current = lenis;
+    lenis.on("scroll", ScrollTrigger.update);
+
+    let idle = 0;
+    const markScrolling = () => {
+      document.documentElement.classList.add("is-scrolling");
+      window.clearTimeout(idle);
+      idle = window.setTimeout(() => document.documentElement.classList.remove("is-scrolling"), 140);
+    };
+    lenis.on("scroll", markScrolling);
+
+    const tick = (time: number) => lenis.raf(time * 1000);
+    gsap.ticker.add(tick);
+    gsap.ticker.lagSmoothing(0);
+
+    return () => {
+      window.clearTimeout(idle);
+      document.documentElement.classList.remove("is-scrolling");
+      gsap.ticker.remove(tick);
+      lenis.destroy();
+      lenisRef.current = null;
+    };
+  }, []);
 
   useEffect(() => {
     ensureGsap();
@@ -297,6 +336,7 @@ export function MotionRoot({ children }: { children: ReactNode }) {
     } else {
       const scale = Number(gsap.getProperty(wipe, "scaleX"));
       if (scale > 0.85) {
+        lenisRef.current?.scrollTo(0, { immediate: true });
         window.scrollTo(0, 0);
         gsap.set(wipe, { transformOrigin: "right center" });
         gsap.to(wipe, {
@@ -338,22 +378,22 @@ export function MotionRoot({ children }: { children: ReactNode }) {
 
       document.querySelectorAll<HTMLElement>("[data-rise]").forEach((el) => {
         if (hero?.contains(el)) return;
-        gsap.set(el, { y: 70, rotateX: 12, transformOrigin: "50% 0%" });
+        gsap.set(el, { y: 24, autoAlpha: 0 });
         const zoom = el.querySelector("[data-zoom]");
-        if (zoom) gsap.set(zoom, { scale: 1.22 });
+        if (zoom) gsap.set(zoom, { scale: 1.08 });
         gsap.to(el, {
           y: 0,
-          rotateX: 0,
-          duration: 1.15,
-          ease: "power4.out",
-          scrollTrigger: { trigger: el, start: "top 86%" },
+          autoAlpha: 1,
+          duration: 0.7,
+          ease: "power3.out",
+          scrollTrigger: { trigger: el, start: "top 92%" },
         });
         if (zoom) {
           gsap.to(zoom, {
             scale: 1,
-            duration: 1.35,
+            duration: 0.8,
             ease: "power3.out",
-            scrollTrigger: { trigger: el, start: "top 86%" },
+            scrollTrigger: { trigger: el, start: "top 92%" },
           });
         }
       });

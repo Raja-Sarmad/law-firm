@@ -70,7 +70,7 @@ export function InquiryForm({
         <button
           type="submit"
           data-magnetic
-          className="inline-flex h-12 w-full items-center justify-center rounded-full bg-gold text-sm font-semibold text-white hover:bg-gold-deep sm:w-auto sm:px-8"
+          className="inline-flex h-12 w-full items-center justify-center rounded-full bg-gradient-to-b from-[#e0c06e] to-[#b8923f] text-sm font-semibold text-[#0f1218] hover:brightness-110 sm:w-auto sm:px-8"
         >
           <span className="magnetic-inner">{submitLabel}</span>
         </button>
