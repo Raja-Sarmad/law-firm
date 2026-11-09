@@ -32,13 +32,13 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f4f0e8",
+  themeColor: "#0e1117",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${playfair.variable} ${outfit.variable} h-full antialiased`} suppressHydrationWarning>
-      <body className="min-h-full bg-[#f3eadc] font-sans text-navy">
+      <body className="min-h-full bg-[#0e1117] font-sans text-ivory">
         <script dangerouslySetInnerHTML={{ __html: introScript }} />
         <Atmosphere />
         <MotionRoot>

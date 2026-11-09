@@ -24,7 +24,7 @@ const columns = [
 
 export function Footer() {
   return (
-    <footer className="relative z-[1] border-t border-white/50 bg-transparent">
+    <footer className="relative z-[1] border-t border-gold/20 bg-[#080a0f]/70 backdrop-blur-md">
       <div className="shell grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <Logo />
@@ -38,7 +38,7 @@ export function Footer() {
             <ul className="mt-4 space-y-2.5">
               {column.links.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-ink transition-colors hover:text-gold-deep">
+                  <Link href={link.href} className="text-sm text-ink transition-colors hover:text-gold">
                     {link.label}
                   </Link>
                 </li>
@@ -47,7 +47,7 @@ export function Footer() {
           </div>
         ))}
       </div>
-      <div className="border-t border-line">
+      <div className="border-t border-gold/15">
         <div className="shell flex flex-col gap-2 py-5 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 BYLAW Academy. All rights reserved.</p>
           <p>Online legal education for students, counsel, and teams.</p>

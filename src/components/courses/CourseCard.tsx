@@ -17,7 +17,7 @@ export function CourseCard({ course, layout = "grid" }: { course: Course; layout
         data-zoom
       />
       {course.badge ? (
-        <span className="absolute left-3 top-3 rounded-full bg-navy/90 px-2.5 py-1 text-[11px] font-semibold text-white">
+        <span className="absolute left-3 top-3 rounded-full bg-[#080a0f]/90 px-2.5 py-1 text-[11px] font-semibold text-ivory">
           {course.badge}
         </span>
       ) : null}
@@ -69,7 +69,7 @@ export function CourseCard({ course, layout = "grid" }: { course: Course; layout
 
   if (layout === "row") {
     return (
-      <article data-tilt="soft" className="course-row lift grid overflow-hidden rounded-[22px] bg-paper md:grid-cols-[280px_1fr]">
+      <article data-tilt="soft" className="course-row glass grid overflow-hidden rounded-[22px] md:grid-cols-[280px_1fr]">
         {media}
         {body}
       </article>
@@ -78,7 +78,7 @@ export function CourseCard({ course, layout = "grid" }: { course: Course; layout
 
   return (
     <div data-rise className="h-full">
-      <article data-tilt className="lift flex h-full flex-col overflow-hidden rounded-[22px] bg-paper">
+      <article data-tilt className="glass bolt-border flex h-full flex-col overflow-hidden rounded-[22px]">
         {media}
         {body}
       </article>

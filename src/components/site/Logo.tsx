@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export function Logo({ tone = "navy", compact = false }: { tone?: "navy" | "light"; compact?: boolean }) {
-  const word = tone === "light" ? "text-white" : "text-navy";
+  const word = tone === "light" || tone === "navy" ? "text-ivory" : "text-ivory";
   return (
     <Link href="/" aria-label="BYLAW Academy" className="group flex items-center gap-2.5">
       <svg viewBox="0 0 36 36" className={`${compact ? "h-8 w-8" : "h-9 w-9"} text-gold`} aria-hidden="true">

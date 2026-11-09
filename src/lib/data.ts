@@ -481,6 +481,8 @@ export const testimonials = [
       "The courses are practical, well-structured and taught by real legal professionals. Highly recommended!",
     name: "Aneba Khan",
     role: "Law Student",
+    course: "Contract Law Mastery",
+    stat: "Top 5% of her cohort",
     image: "/images/portrait-aneba.jpg",
   },
   {
@@ -488,6 +490,8 @@ export const testimonials = [
       "A great learning experience! The content is detailed, up-to-date and very relevant to real legal practice.",
     name: "Bilal Ahmed",
     role: "Legal Associate",
+    course: "Corporate Law Essentials",
+    stat: "Promoted within 6 months",
     image: "/images/portrait-bilal.jpg",
   },
   {
@@ -495,6 +499,8 @@ export const testimonials = [
       "BYLAW Academy helped me strengthen my legal knowledge and advance my career.",
     name: "Sara Nawaz",
     role: "Corporate Counsel",
+    course: "Drafting Workshop",
+    stat: "3 certifications earned",
     image: "/images/portrait-sara.jpg",
   },
   {
@@ -502,6 +508,8 @@ export const testimonials = [
       "I took the drafting workshop between filings. The mark-ups alone changed how I send a first draft.",
     name: "Hina Raza",
     role: "Trainee Solicitor",
+    course: "Civil Litigation Studio",
+    stat: "40% faster first drafts",
     image: "/images/learner-3.jpg",
   },
   {
@@ -509,6 +517,8 @@ export const testimonials = [
       "Clear, serious teaching. It respects that most of us are already in practice and short on time.",
     name: "Omar Farooq",
     role: "In-house Counsel",
+    course: "Criminal Law & Procedure",
+    stat: "Firm-wide training rolled out",
     image: "/images/learner-2.jpg",
   },
 ];

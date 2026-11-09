@@ -143,8 +143,8 @@ function Preloader() {
 
   return (
     <div ref={root} className="preloader fixed inset-0 z-[80]">
-      <div className="pre-left absolute inset-y-0 left-0 w-1/2 bg-cream" />
-      <div className="pre-right absolute inset-y-0 right-0 w-1/2 bg-cream" />
+      <div className="pre-left absolute inset-y-0 left-0 w-1/2 bg-[#080a0f]" />
+      <div className="pre-right absolute inset-y-0 right-0 w-1/2 bg-[#080a0f]" />
       <div className="pre-mark absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
         <Logo />
         <span className="pre-line mt-6 block h-px w-28 origin-left bg-gold" />
@@ -456,93 +456,21 @@ export function MotionRoot({ children }: { children: ReactNode }) {
         });
       });
 
-      document.querySelectorAll<HTMLElement>("[data-colonnade]").forEach((column) => {
-        const toward = column.dataset.colonnade === "right" ? 12 : -16;
-        gsap.to(column, {
-          yPercent: toward,
-          ease: "none",
-          scrollTrigger: { start: 0, end: "max", scrub: 1.15 },
-        });
-      });
-
-      const spot = document.querySelector("[data-spotlight]");
-      if (spot) {
-        gsap.fromTo(
-          spot,
-          { yPercent: -24, xPercent: -8 },
-          {
-            yPercent: 58,
-            xPercent: 10,
-            ease: "none",
-            scrollTrigger: { start: 0, end: "max", scrub: 0.65 },
-          },
-        );
-      }
-
-      const scales = document.querySelector("[data-scales]");
-      if (scales) {
-        gsap.to(scales, {
-          rotation: 7,
-          duration: 6.5,
-          ease: "sine.inOut",
-          yoyo: true,
-          repeat: -1,
-          transformOrigin: "50% 11%",
-        });
-      }
-
       if (hero) {
         const chars = Array.from(hero.querySelectorAll<HTMLElement>("[data-split] .split-target"));
-        const hall = hero.querySelector("[data-hero-bg]");
-        if (hall) {
-          gsap.fromTo(
-            hall,
-            { scale: 1.08, xPercent: 0 },
-            { scale: 1.16, xPercent: -2, duration: 16, ease: "sine.inOut", yoyo: true, repeat: -1 },
-          );
-        }
-        const statue = hero.querySelector("[data-statue]");
-        if (statue) {
-          gsap.to(statue, {
-            y: -22,
-            x: 14,
-            rotation: 1.6,
-            scale: 1.035,
-            duration: 3.4,
-            ease: "sine.inOut",
-            yoyo: true,
-            repeat: -1,
-            transformOrigin: "50% 80%",
-          });
-        }
         const photo = hero.querySelector("[data-hero-photo]");
         const rises = hero.querySelectorAll("[data-hero-rise]");
         const line = hero.querySelector("[data-hero-line]");
-        if (photo) gsap.set(photo, { clipPath: "inset(8% 6% 10% 12%)", scale: 1.14 });
+        if (photo) gsap.set(photo, { opacity: 0, y: 28 });
         gsap.set(rises, { y: 32 });
         if (line) gsap.set(line, { scaleX: 0, transformOrigin: "left center" });
-        const parallax = hero.querySelector("[data-hero-parallax]");
-        if (parallax) {
-          gsap.to(parallax, {
-            yPercent: 8,
-            ease: "none",
-            scrollTrigger: {
-              trigger: hero,
-              start: "top top",
-              end: "bottom top",
-              scrub: true,
-            },
-          });
-        }
         whenReady().then(() => {
           if (cancelled) return;
           context.add(() => {
             const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
             tl.to(chars, { yPercent: 0, duration: 1.15, stagger: 0.02 }, 0.05);
             if (line) tl.to(line, { scaleX: 1, duration: 0.7, ease: "power3.inOut" }, 0.05);
-            if (photo) {
-              tl.to(photo, { clipPath: "inset(0% 0% 0% 0%)", scale: 1, duration: 1.55 }, 0);
-            }
+            if (photo) tl.to(photo, { opacity: 1, y: 0, duration: 1.2 }, 0.1);
             tl.to(rises, { y: 0, duration: 1, stagger: 0.08 }, 0.35);
           });
         });
@@ -579,7 +507,7 @@ export function MotionRoot({ children }: { children: ReactNode }) {
   return (
     <>
       <div id="scroll-progress" className="pointer-events-none fixed left-0 top-0 z-[55] h-[2px] w-full origin-left scale-x-0 bg-gold" />
-      <div id="page-wipe" className="pointer-events-none fixed inset-0 z-[60] origin-left scale-x-0 bg-cream" />
+      <div id="page-wipe" className="pointer-events-none fixed inset-0 z-[60] origin-left scale-x-0 bg-[#080a0f]" />
       <a
         href="#content"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[90] focus:rounded-full focus:bg-paper focus:px-4 focus:py-2"

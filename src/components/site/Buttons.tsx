@@ -3,9 +3,9 @@ import type { ReactNode } from "react";
 import { ArrowIcon } from "@/components/icons";
 
 const gold =
-  "inline-flex h-11 items-center justify-center rounded-full bg-gold px-5 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(198,163,90,0.28)] transition-colors hover:bg-gold-deep";
+  "inline-flex h-11 items-center justify-center rounded-full bg-gradient-to-b from-[#e0c06e] to-[#b8923f] px-5 text-sm font-semibold text-[#080a0f] shadow-[0_12px_28px_rgba(212,175,92,0.32)] transition-[filter,transform] hover:brightness-110";
 const ghost =
-  "inline-flex h-11 items-center justify-center rounded-full border border-[#ddd4c8] bg-paper px-5 text-sm font-semibold text-navy transition-colors hover:border-gold";
+  "inline-flex h-11 items-center justify-center rounded-full border border-gold/35 bg-white/5 px-5 text-sm font-semibold text-ivory transition-colors hover:border-gold hover:bg-white/10";
 
 function Inner({ children, arrow }: { children: ReactNode; arrow?: boolean }) {
   return (
