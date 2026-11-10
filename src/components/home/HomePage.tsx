@@ -63,12 +63,14 @@ export function HomePage() {
       </section>
 
       <section className="shell grid items-center gap-10 py-8 sm:py-14 lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="grid min-h-[360px] place-items-center rounded-[28px] border border-gold/25 bg-[#12161e] px-8 text-center">
-          <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">Photo</p>
-            <p className="mt-3 font-serif text-[28px] text-ivory">George</p>
-            <p className="mt-2 text-sm text-ink">Real photo of George, warm and natural.</p>
-          </div>
+        <div className="relative min-h-[360px] overflow-hidden rounded-[28px] border border-gold/25 sm:min-h-[460px]">
+          <Image
+            src="/images/george.jpg"
+            alt="George at his desk"
+            fill
+            sizes="(min-width: 1024px) 40vw, 100vw"
+            className="object-cover object-[center_22%]"
+          />
         </div>
         <div>
           <div className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">

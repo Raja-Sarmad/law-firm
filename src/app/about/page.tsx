@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowIcon } from "@/components/icons";
 import { GoldLink } from "@/components/site/Buttons";
@@ -13,12 +14,15 @@ const credentials = ["Attorney", "CPA", "20+ years", "6-attorney firm"];
 export default function Page() {
   return (
     <section className="shell grid items-center gap-10 py-14 lg:grid-cols-[0.85fr_1.15fr] lg:py-20">
-      <div className="grid min-h-[420px] place-items-center rounded-[28px] border border-gold/25 bg-[#12161e] px-8 text-center">
-        <div>
-          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">Photo</p>
-          <p className="mt-3 font-serif text-[32px] text-ivory">George</p>
-          <p className="mt-2 max-w-xs text-sm leading-6 text-ink">Real photo of George, warm and natural, not a stock image.</p>
-        </div>
+      <div className="relative min-h-[420px] overflow-hidden rounded-[28px] border border-gold/25 lg:min-h-[520px]">
+        <Image
+          src="/images/george.jpg"
+          alt="George at his desk"
+          fill
+          priority
+          sizes="(min-width: 1024px) 42vw, 100vw"
+          className="object-cover object-[center_22%]"
+        />
       </div>
       <div>
         <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">Meet your guide</p>
