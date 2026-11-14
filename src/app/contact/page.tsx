@@ -15,7 +15,7 @@ export default function Page() {
         title="Contact"
         lede="Questions about the Blueprint, the free challenge, or the Firm Audit."
       />
-      <section className="shell grid gap-8 pb-20 pt-8 lg:grid-cols-[0.8fr_1.2fr]">
+      <section className="shell grid gap-8 pb-12 pt-6 lg:grid-cols-[0.8fr_1.2fr]">
         <aside className="lift h-fit rounded-[24px] bg-paper p-6">
           <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gold">Desk</p>
           <p className="mt-3 font-serif text-2xl text-ivory">[email address]</p>

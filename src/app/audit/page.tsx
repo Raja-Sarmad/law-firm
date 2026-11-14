@@ -33,8 +33,8 @@ const desk = [
 
 export default function Page() {
   return (
-    <section className="shell py-12 lg:py-16">
-      <div className="grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+    <section className="shell py-10 lg:py-12">
+      <div className="grid items-start gap-8 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
           <div className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
             <span className="h-px w-8 bg-gold" />
@@ -78,7 +78,7 @@ export default function Page() {
         />
       </div>
 
-      <div className="mt-14 border-t border-gold/15 pt-10">
+      <div className="mt-10 border-t border-gold/15 pt-8">
         <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">What it looks at</p>
         <ul className="mt-5 grid gap-3 sm:grid-cols-2">
           {desk.map((item) => (

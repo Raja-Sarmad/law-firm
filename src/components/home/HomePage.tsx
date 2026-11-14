@@ -21,7 +21,7 @@ export function HomePage() {
   return (
     <>
       <section data-hero className="hero-stage relative isolate overflow-x-clip pb-4">
-        <div className="shell relative grid items-start gap-8 pb-16 pt-6 sm:gap-10 sm:pt-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:pb-20 lg:pt-6">
+        <div className="shell relative grid items-start gap-8 pb-10 pt-6 sm:gap-10 sm:pt-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:pb-12 lg:pt-6">
           <div className="lg:-mt-10">
             <div className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-gold sm:text-[11px] sm:tracking-[0.22em]">
               <span data-hero-line className="inline-block h-px w-8 shrink-0 origin-left bg-gold" />
@@ -62,7 +62,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="shell grid items-center gap-10 py-8 sm:py-14 lg:grid-cols-[0.9fr_1.1fr]">
+      <section className="shell grid items-center gap-8 py-6 sm:py-10 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="relative min-h-[360px] overflow-hidden rounded-[28px] border border-gold/25 sm:min-h-[460px]">
           <Image
             src="/images/george.jpg"
@@ -81,10 +81,10 @@ export function HomePage() {
             <span data-split>Hi, I’m George.</span>
           </h2>
           <p className="mt-4 max-w-xl text-[16px] leading-7 text-ink">
-            I’m an attorney and a CPA who spent over 20 years building a firm of 6 attorneys and 20+ staff.
+            I’m an attorney and a CPA who started a firm in 2002 and grew it into a multi-attorney practice. With Roberta, we built The Solo Firm Blueprint from that experience.
           </p>
           <p className="mt-3 max-w-xl text-[15px] leading-7 text-ink">
-            I made the mistakes so you don’t have to, and I turned what worked into a system for solo and small firms. One personal line — where you’re from, what you do outside the office.
+            We help owners of solo and small law firms run more confident businesses—with useful tools and a clearer view of what needs their attention.
           </p>
           <ul className="mt-6 flex flex-wrap gap-2">
             {credentials.map((tag) => (
@@ -131,7 +131,7 @@ export function HomePage() {
 
       <Testimonials />
 
-      <section id="challenge" className="relative overflow-hidden pb-16 sm:pb-24">
+      <section id="challenge" className="relative overflow-hidden pb-10 sm:pb-14">
         <div aria-hidden className="pointer-events-none absolute -right-24 top-1/2 hidden h-[620px] w-[620px] -translate-y-1/2 opacity-[0.09] lg:block">
           <Image
             src="/images/asset-scales.png"

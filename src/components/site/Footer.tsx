@@ -30,11 +30,11 @@ const columns = [
 
 export function Footer() {
   return (
-    <footer className="relative z-[1] mt-6 overflow-hidden bg-[#0c0f14]">
+    <footer className="relative z-[1] mt-2 overflow-hidden bg-[#0c0f14]">
       <div className="h-px bg-gradient-to-r from-transparent via-[#f3dc9a] to-transparent" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-[radial-gradient(ellipse_at_top,rgba(212,175,92,0.16),transparent_70%)]" />
 
-      <div className="shell relative grid gap-10 py-14 md:grid-cols-[1.3fr_1fr_1fr_1fr]">
+      <div className="shell relative grid gap-8 py-10 md:grid-cols-[1.3fr_1fr_1fr_1fr]">
         <div>
           <Logo />
           <p className="mt-4 max-w-xs font-serif text-[22px] leading-snug text-ivory">The Solo Firm Blueprint</p>

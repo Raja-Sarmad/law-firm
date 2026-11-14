@@ -45,7 +45,7 @@ export function Testimonials() {
   }, [go]);
 
   return (
-    <section id="results" className="relative overflow-hidden py-20 lg:py-24">
+    <section id="results" className="relative overflow-hidden py-10 lg:py-14">
       <div className="shell relative">
         <div className="mx-auto max-w-3xl text-center">
           <div className="flex items-center justify-center gap-4 text-[11px] font-semibold uppercase tracking-[0.24em] text-gold">
@@ -61,7 +61,7 @@ export function Testimonials() {
 
         {/* Coverflow stage */}
         <div
-          className="t-stage relative mx-auto mt-12 h-[640px] w-full max-w-[1180px] sm:h-[460px]"
+          className="t-stage relative mx-auto mt-8 h-[640px] w-full max-w-[1180px] sm:h-[460px]"
           onMouseEnter={() => (paused.current = true)}
           onMouseLeave={() => (paused.current = false)}
         >

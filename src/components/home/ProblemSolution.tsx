@@ -83,8 +83,8 @@ function Row({ icon, title, text }: { icon: ReactNode; title: string; text: stri
 
 export function ProblemSolution() {
   return (
-    <section className="relative overflow-hidden py-16 sm:py-24">
-      <div aria-hidden className="pointer-events-none absolute -right-8 top-48 hidden h-[540px] w-[460px] lg:block">
+    <section className="relative overflow-hidden py-10 sm:py-14">
+      <div aria-hidden className="pointer-events-none absolute -right-8 top-36 hidden h-[540px] w-[460px] lg:block">
         <Image src="/images/asset-statue.png" alt="" fill sizes="460px" className="ps-statue object-cover object-[58%_12%]" />
       </div>
 
@@ -108,7 +108,7 @@ export function ProblemSolution() {
           </p>
         </div>
 
-        <div className="relative mx-auto mt-14 max-w-[1100px]">
+        <div className="relative mx-auto mt-10 max-w-[1100px]">
           <div className="grid items-stretch gap-8 lg:grid-cols-2 lg:gap-x-24">
             <article data-rise className="relative flex h-full flex-col">
               <span className="absolute left-7 top-0 z-[1] inline-flex -translate-y-1/2 items-center gap-2 rounded-full border border-gold/45 bg-[#1a160e] px-3.5 py-1.5 text-[13px] font-semibold text-gold">

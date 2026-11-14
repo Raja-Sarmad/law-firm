@@ -38,7 +38,7 @@ export function PageHeading({
   lede?: string;
 }) {
   return (
-    <div className="shell pb-2 pt-10 md:pt-12">
+    <div className="shell pb-2 pt-8 md:pt-10">
       <Crumb items={crumb} />
       <h1
         className="mt-4 max-w-3xl font-serif text-4xl font-medium tracking-[-0.03em] text-navy sm:text-5xl"
